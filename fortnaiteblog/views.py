@@ -1,7 +1,14 @@
 from django.shortcuts import render
+from django.views.generic import ListView 
+from .models import BlogModel
 
 # Create your views here.
+def detailview(request , pk):
+    object = BlogModel.objects.get(pk=pk)
+    return render(request, 'detail.html' ,{'object' : object})
 
-def homeview(request):
-    return render(request , 'home.html')
+# Create your views here.
+class BlogList(ListView):
+    template_name = 'home.html'
+    model = BlogModel
     

@@ -1,7 +1,8 @@
-from django.contrib import admin
 from django.urls import path 
-from .views import homeview
+from .views import BlogList , detailview
 
 urlpatterns = [
-    path('', homeview),
+    path('detail/<int:pk>/' , detailview , name ='detail'),
+    path('', BlogList.as_view() , name ='home'),  
+    
 ]
