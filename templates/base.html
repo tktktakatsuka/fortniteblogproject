@@ -56,39 +56,31 @@
   {% endblock content%}
 
   <!--ヘッダー　ここから-->
-                  <font color="white">
-    <nav class="navbar navbar-expand-lg navbar-light  bg-info ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src={%  static  "img/rogo.jpg"%} class="d-block w-100 " alt="width=" 240" height="70"">
+  <nav class="navbar navbar-expand-lg navbar-light  bg-info ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src={%  static  "img/rogo.jpg"%} class="d-block w-100 " alt="width=" 240" height="70"">
       </a>
       <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse justify-content-around nav.fixed-top" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
-                  <h4>Home</h4>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <h4>Features</h4>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <h4>Pricing</h4>
-                </a>
-              </li>
-            </ul>
-          </div>
-      </div>
-    </nav>
-  </font>
+        <div class="collapse navbar-collapse justify-content-around nav.fixed-top" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                <font color="white">
+                  <p>
+                    <h1>Fortniteブログ（仮）</h1>
+                  </p>
+                </font>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
   <!--ヘッダー　ここまで-->
 
   <!-- Optional JavaScript -->

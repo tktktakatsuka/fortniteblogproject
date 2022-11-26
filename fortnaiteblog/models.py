@@ -7,7 +7,9 @@ class BlogModel(models.Model) :
     title    = models.CharField( max_length=50)
     titleImages  = models.ImageField(upload_to='',blank = True ,null = True)
 
-    headline  = models.TextField()
+    headline        = models.TextField(blank = True ,null = True)
+    articleContent  = models.TextField(blank = True ,null = True)
+
 
     images1   = models.ImageField(upload_to='',blank = True ,null = True)
     articleHeadline1 = models.TextField(blank = True ,null = True)    
@@ -29,8 +31,9 @@ class BlogModel(models.Model) :
     images5   = models.ImageField(upload_to='',blank = True ,null = True)
     articleHeadline5 = models.TextField(blank = True ,null = True)    
     articleContent5 = models.TextField(blank = True ,null = True)
-
     
+    endContents = models.TextField(blank = True ,null = True)
+
     postdate = models.DateField( auto_now_add=True)
     category = models.CharField(max_length = 50 ,choices =CATEGORY)
     
