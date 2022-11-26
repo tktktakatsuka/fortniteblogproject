@@ -1,18 +1,35 @@
 from django.db import models
 
 # Create your models here.
-CATEGORY = (('business','ビジネス') , ('life','生活') , ('other','その他'))
+CATEGORY = (('Fortnite','フォートナイト') , ('programming','プログラミング') , ('other','その他'))
 
 class BlogModel(models.Model) :
     title    = models.CharField( max_length=50)
-    images1  = models.ImageField(upload_to='')
-    images2   = models.ImageField(upload_to='',blank = True ,null = True)
-    images3   = models.ImageField(upload_to='',blank = True ,null = True)
-    images4   = models.ImageField(upload_to='',blank = True ,null = True)
-    images5   = models.ImageField(upload_to='',blank = True ,null = True)
+    titleImages  = models.ImageField(upload_to='',blank = True ,null = True)
+
     headline  = models.TextField()
+
+    images1   = models.ImageField(upload_to='',blank = True ,null = True)
+    articleHeadline1 = models.TextField(blank = True ,null = True)    
+    articleContent1 = models.TextField(blank = True ,null = True)
+
+
+    images2   = models.ImageField(upload_to='',blank = True ,null = True)
+    articleHeadline2 = models.TextField(blank = True ,null = True)    
+    articleContent2 = models.TextField(blank = True ,null = True)
     
-    content = models.FileField(upload_to='',verbose_name='添付ファイル')
+    images3   = models.ImageField(upload_to='',blank = True ,null = True)
+    articleHeadline3 = models.TextField(blank = True ,null = True)    
+    articleContent3 = models.TextField(blank = True ,null = True)
+
+    images4   = models.ImageField(upload_to='',blank = True ,null = True)
+    articleHeadline4 = models.TextField(blank = True ,null = True)    
+    articleContent4 = models.TextField(blank = True ,null = True)
+
+    images5   = models.ImageField(upload_to='',blank = True ,null = True)
+    articleHeadline5 = models.TextField(blank = True ,null = True)    
+    articleContent5 = models.TextField(blank = True ,null = True)
+
     
     postdate = models.DateField( auto_now_add=True)
     category = models.CharField(max_length = 50 ,choices =CATEGORY)
