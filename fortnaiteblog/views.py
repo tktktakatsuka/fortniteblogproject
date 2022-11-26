@@ -11,4 +11,5 @@ def detailview(request , pk):
 class BlogList(ListView):
     template_name = 'home.html'
     model = BlogModel
+    paginate_by = 4
     
