@@ -12,6 +12,11 @@
     font-family: "Noto Sans JP";
     background-color: #dddddd;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+}
+
 </style>
 {% endblock header%}
 
@@ -22,18 +27,16 @@
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <div style="text-align: center">
-        <div class="card">
+
+        <div class="card" style="max-width: 100%; height: auto;" >
           <h5 class="card-header">{{object.title}}</h5>
           <div class="card-body">
-
-
-            
             <p><img src={{ object.titleImages.url }} height=350 width=600 alt="..."></p>
 
             <!--改行--><br>
 
             <div class="container mb-3 text-left"
-              style="border: 1px solid #000000; width:400px;height:200px;background-color:white ;" class="rounded mb-3">
+              style="border: 1px solid #000000; width:400px;height:200px;background-color:white ;     max-width: 100%; height: auto;" class="rounded mb-3">
               <details id="table-of-content" open>
                 <summary>目次</summary>
               </details>
@@ -109,7 +112,7 @@
     <!--サブコンテンツ　ここから-->
     <div class="col-xs-12 col-md-4 ">
       <!--カード　ここから-->
-      <div class="container mb-5">
+      <div class="container mb-5 py-5">
         <div class="card-deck">
           <div class="card" style="width: 18rem;">
             <img src={%  static  "img/4.jpg"%} class="card-img-top" alt="...">
@@ -123,7 +126,8 @@
 
 
         <!--insta link-->
-        <div class="container py-5">
+        <div class="container py-5 insta" style="max-width: 100%; height: auto;">
+          
           <blockquote class="instagram-media mb-5" data-instgrm-captioned
             data-instgrm-permalink="https://www.instagram.com/p/CeJHFsAP-mD/?utm_source=ig_embed&amp;utm_campaign=loading"
             data-instgrm-version="14"
