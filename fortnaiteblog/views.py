@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import BlogModel
@@ -16,3 +17,14 @@ class BlogList(ListView):
 # Create your views here.
 def google(request):
     return render(request, 'google78b143064e223f8d.html')
+
+# Create your views here.
+def countDownView(request):
+    dt_now = datetime.datetime.now()
+    time_left = dt_now + datetime.timedelta(minutes=90)
+    strftime_time_left = time_left.strftime('%B %d,%Y %H:%M:%S')
+    context = {
+    'time_left': strftime_time_left
+    }
+    return render(request, 'countDown.html', context)
+ 

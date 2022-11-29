@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import BlogList , detailview , google
+from .views import BlogList , detailview , google , countDownView
 
 urlpatterns = [
     path('detail/<int:pk>/' , detailview , name ='detail'),
-    path('', BlogList.as_view() , name ='home'),
+    path('countDown' , countDownView , name ='detail'),
     path('google78b143064e223f8d.html/', google, name='google'),
+    path('', BlogList.as_view() , name ='home'),
+
 ]
