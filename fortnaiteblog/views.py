@@ -20,11 +20,5 @@ def google(request):
 
 # Create your views here.
 def countDownView(request):
-    dt_now = datetime.datetime.now()
-    time_left = dt_now + datetime.timedelta(minutes=90)
-    strftime_time_left = time_left.strftime('%B %d,%Y %H:%M:%S')
-    context = {
-    'time_left': strftime_time_left
-    }
-    return render(request, 'countDown.html', context)
+    return render(request, 'countDown.html')
  

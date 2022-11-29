@@ -74,7 +74,6 @@
         <div class="card-body">
           <div class="row">
             <div class="col">
-
               <img src={{  item.titleImages.url }} class="card-img-top" alt="...">
             </div>
             <div class="col">
@@ -130,6 +129,22 @@
 
     <!--サブコンテンツ　ここから-->
     <div class="col-xs-12 col-md-4 ">
+
+      <!--カード　ここから-->
+      <div class="container mb-5">
+        <div class="card-deck ">
+          <div class="card" style="width: 18rem;">
+            <img src={%  static  "img/4.jpg"%} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h1 class="card-title">Card title</h1>
+              <a href="{% url 'countDown' %}" class="btn btn-primary">記事を読む</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!--カード　ここまで-->
+
+
       <!--カード　ここから-->
       <div class="container mb-5">
         <div class="card-deck ">

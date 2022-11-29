@@ -1,101 +1,69 @@
 {% extends 'base.html'%}
 {% load static %}
 
+{% block    header%}
+{% endblock header%}
 
 
 
-  {% block    header%}
-<script>
-'use strict';
- 
-var $time_left = $("#time_left").attr('data-time-left');
-var startTime = new Date();
-var endTime = new Date($time_left);
-var left = endTime - startTime;
-var time = 24 * 60 * 60 * 1000;
- 
-var hour = Math.floor((left % time) / (60 * 60 * 1000))
-var minutes = Math.floor((left % time) / (60 * 1000)) % 60
-var second = Math.floor((left % time) / 1000) % 60 % 60
- 
-$("#time_left").text(hour + ':' + minutes + ':' + second );
-setTimeout('countDown()', 1000);
-</script>
 
-
-
-  {% endblock header%}
-
-  <!--ヘッダー　ここから-->
-  <nav class="navbar navbar-expand-lg navbar-light  bg-info ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src={%  static  "img/rogo.jpg"%} class="d-block w-100 " alt="width=" 240" height="70"">
-      </a>
-      <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-around nav.fixed-top" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
-                <font color="white">
-                  <p>
-                    <h1>Fortniteブログ（仮）</h1>
-                  </p>
-                </font>
-              </a>
-            </li>
-          </ul>
-        </div>
+{% block    content%}
+<div style="text-align: center">
+    <div class="container-fluid mt-5">
+            <h1>
+                <p class="text-danger">フィナーレイベントまで・・・</p>
+                <p class="text-danger">あと<span id="timer"></span>です！！！</p>
+            </h1>
+        </p>
     </div>
-  </nav>
-  <!--ヘッダー　ここまで-->
+</div>
 
-  {% block    content%}
-  {% endblock content%}
 
-  <!--ヘッダー　ここから-->
-  <nav class="navbar navbar-expand-lg navbar-light  bg-info ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src={%  static  "img/rogo.jpg"%} class="d-block w-100 " alt="width=" 240" height="70"">
-      </a>
-      <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-around nav.fixed-top" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
-                <font color="white">
-                  <p>
-                    <h1>Fortniteブログ（仮）</h1>
-                  </p>
-                </font>
-              </a>
-            </li>
-          </ul>
+<!--carousel　ここから-->
+<div class="container py-5" id="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src={%  static  "img/①countdown.jpg"%}  class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src={%  static  "img/②countdown.jpg"%} class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-  </nav>
-  <!--ヘッダー　ここまで-->
+</div>
+<!--carousel　ここまで-->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, Popper.js, Bootstrap JSの順番に読み込む -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-  </script>
-</body>
 
-</html>
+
+
+<script src="{%static "countdown.js" %}"></script>
+</h1>
+{% endblock content%}
