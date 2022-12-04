@@ -12,7 +12,7 @@ def detailview(request , pk):
 class BlogList(ListView):
     template_name = 'home.html'
     model = BlogModel
-    paginate_by = 3
+    paginate_by = 10
 
 # Create your views here.
 def google(request):
