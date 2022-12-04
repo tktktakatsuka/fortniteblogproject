@@ -10,6 +10,9 @@ def detailview(request , pk):
 
 # Create your views here.
 class BlogList(ListView):
+        # Companyテーブル連携・表示設定
+    queryset = BlogModel.objects.order_by("-postdate")
+    
     template_name = 'home.html'
     model = BlogModel
     paginate_by = 10
